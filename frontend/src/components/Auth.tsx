@@ -8,6 +8,7 @@ export default function Auth({ type }:{type:"signup"|"signin"}) {
 
   const [inAction,setInAction]=useState(false);
 
+
  const [postInputs,setPostInputs]=useState<signupSchema>({
   name:"",
   email:"",
