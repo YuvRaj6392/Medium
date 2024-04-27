@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface authorName {
  name: string;
 }
@@ -10,16 +12,18 @@ export function Avatar({ name }: authorName) {
  );
 }
 
-interface blogCardProps {
+export interface blogCardProps {
+id?:string
  authorName: string;
  title: string;
  content: string;
  publishedDate: string;
 }
 
-export default function BlogCard({ authorName, title, content, publishedDate }: blogCardProps) {
+export default function BlogCard({ id, authorName, title, content, publishedDate }: blogCardProps) {
  return (
-   <div className="border-b-2 border-blue pb-4 p-5">
+  <Link to={`/blog/${id}`}>
+   <div className="border-b-2 border-blue pb-4 p-5 cursor-pointer">
      <div className="flex items-center gap-5">
        <Avatar name={authorName}/>
         <div className="font-light">
@@ -43,5 +47,6 @@ export default function BlogCard({ authorName, title, content, publishedDate }: 
      </div>
      
    </div>
+   </Link>
  );
 }

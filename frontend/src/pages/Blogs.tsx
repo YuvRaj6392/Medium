@@ -1,7 +1,7 @@
 import BlogCard from "../components/BlogCard";
 import { useBlogs } from "../hooks";
 
-// Create a Skeleton component
+
 const Skeleton = () => (
   
 <div role="status" className="w-full animate-pulse m-10">
@@ -21,11 +21,13 @@ const Skeleton = () => (
 export default function Blogs() {
   const { loading, blogs } = useBlogs();
 
-  // Render the skeleton loading effect if loading is true
+  
   if (loading) {
     return (
       <div className="flex justify-center">
         <div className="flex-col justify-center">
+          <Skeleton />
+          <Skeleton />
           <Skeleton />
           <Skeleton />
           <Skeleton />
@@ -43,7 +45,8 @@ export default function Blogs() {
             return (
               <BlogCard
                 key={e.id}
-                authorName={"Yuvraj"}
+                id={e.id}
+                authorName={e.author.name}
                 title={e.title}
                 content={e.content}
                 publishedDate={"23.10.23"}
