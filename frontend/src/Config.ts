@@ -1,1 +1,1 @@
-export const DATABASE_URL=""
+export const DATABASE_URL="YOUR_DB_URL"

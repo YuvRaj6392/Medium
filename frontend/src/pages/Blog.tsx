@@ -52,24 +52,7 @@ export default function Blog() {
     }
     
     
-    
     </>
 
-
-
-    // <div className="flex justify-center">
-    //   <div className="flex-col justify-center">
-    //   {blog && (
-    //       <BlogCard
-    //         key={blog.id}
-    //         id={blog.id}
-    //         authorName={blog.author.name}
-    //         title={blog.title}
-    //         content={blog.content}
-    //         publishedDate={"23.10.23"}
-    //       />
-    //     )}
-    //   </div>
-    // </div>
   );
 }
