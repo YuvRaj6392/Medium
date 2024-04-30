@@ -1,1 +1,1 @@
-export const DATABASE_URL="https://backend.yuvraj-srivastava6392.workers.dev"
+export const DATABASE_URL=""
