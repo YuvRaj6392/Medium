@@ -7,6 +7,7 @@ import { PrivateRouter } from "./functions/PrivateRouter";
 import Blog from "./pages/Blog";
 import Blogs from "./pages/Blogs";
 import Publish from "./pages/Publish";
+import Error from "./pages/Error";
 
 export default function MainAppItem() {
   const showHeader = !["/signin", "/signup"].includes(window.location.pathname);
@@ -23,6 +24,8 @@ export default function MainAppItem() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/publish" element={<Publish />} />
         </Route>
+
+        <Route path="*" element={<Error/>}/>
 
       </Routes>
     </Router>

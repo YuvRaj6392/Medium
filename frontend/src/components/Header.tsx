@@ -53,30 +53,32 @@ export default function Header() {
   return (
     <>
    
-    <header className="border-b flex justify-between items-center px-10 py-2">
-      <div className="font-extrabold text-2xl">
-        <Link to="/blogs">MeDium</Link>
-      </div>
-      <div className="flex justify-center items-center gap-3">
-      <div>
-        {location === "/publish" ? (
-            <button onClick={uploadBlog} type="button" className={`focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1 me-2 mb-2    ${loading ? 'pointer-events-none': 'pointer'}`}>Publish</button>
-        ) : (
-          <Link to="/publish">
-            <button type="button" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1 me-2 mb-2">New</button>
-          </Link>
-        )}
-        <Avatar name="yuvraj" />
-        
-      </div>
-      <div style={{cursor:'pointer'}} onClick={()=>{
-          localStorage.removeItem("token")
-          window.location.href="/signin"
-      }}>
-      <img width={20}  src={logoutIcon} alt="Logout" />
-      </div>
-      </div>
-    </header> 
+   {token && (
+     <header className="border-b flex justify-between items-center px-10 py-2">
+     <div className="font-extrabold text-2xl">
+       <Link to="/blogs">MeDium</Link>
+     </div>
+     <div className="flex justify-center items-center gap-3">
+     <div>
+       {location === "/publish" ? (
+           <button onClick={uploadBlog} type="button" className={`focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1 me-2 mb-2    ${loading ? 'pointer-events-none': 'pointer'}`}>Publish</button>
+       ) : (
+         <Link to="/publish">
+           <button type="button" className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1 me-2 mb-2">New</button>
+         </Link>
+       )}
+       <Avatar name="yuvraj" />
+       
+     </div>
+     <div style={{cursor:'pointer'}} onClick={()=>{
+         localStorage.removeItem("token")
+         window.location.href="/signin"
+     }}>
+     <img width={20}  src={logoutIcon} alt="Logout" />
+     </div>
+     </div>
+   </header> 
+   )}
 
     {
       loading && (
